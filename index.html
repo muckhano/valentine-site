@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine Surprise 💖</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: #ffe6f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #ff3366;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yes {
+      background-color: #ff3366;
+      color: white;
+    }
+
+    #no {
+      background-color: #cccccc;
+      color: black;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 40px;
+      font-size: 20px;
+      max-width: 600px;
+      color: #333;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wil je mijn Valentijn zijn? 💖</h1>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+  <div id="message"></div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+    const messageDiv = document.getElementById('message');
+
+    // Move the "No" button to random positions on hover
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+
+    // Show heartfelt message on "Yes" click
+    yesBtn.addEventListener('click', () => {
+      messageDiv.innerHTML = `
+        Ik kan elke dag niet geloven hoeveel geluk ik heb, tussen miljoenen sterren, gedurende miljarden jaren, 
+        om te leven, en om dit leven met jou te mogen doorbrengen, is zo ongelooflijk, en toch krijg ik hier 
+        het onmogelijke kans om jou te leren kennen.<br><br>
+        Seni çok seviyorum Semanur, çok fazla, ve bu sevgiyi sizinle paylaşmak için dünyadaki tüm zamanı ayırmayı 
+        dört gözle bekliyorum!
+      `;
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
